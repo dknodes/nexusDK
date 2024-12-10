@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  nexusdk:
+    image: dknodes/nexus:latest
+    container_name: nexusDK
+    restart: unless-stopped
+    volumes:
+      - ./nexus-data:/root/.nexus
+    environment:
+      - ORCHESTRATOR_URL=beta.orchestrator.nexus.xyz
+    command: ["./target/release/prover", "beta.orchestrator.nexus.xyz"]
