@@ -127,6 +127,15 @@ view_logs() {
     read -p "Press enter to return to the main menu..."
 }
 
+
+images() {
+    echo -e "${RESTART} Image update and restart...${RESET}"
+    docker-compose down
+    docker rmi dknodes/nexus:latest
+    docker-compose up -d
+    read -p "Press enter to return to the main menu..."
+}
+
 # ----------------------------
 # Draw Menu Borders
 # ----------------------------
@@ -156,7 +165,8 @@ show_menu() {
     echo -e "    ${CYAN}3.${RESET} ${STOP} Stop Nexus Node"
     echo -e "    ${CYAN}4.${RESET} ${RESTART} Restart Nexus Node"
     echo -e "    ${CYAN}5.${RESET} ${LOGS} View Nexus Node Logs"
-    echo -e "    ${CYAN}6.${RESET} ${EXIT} Exit"
+    echo -e "    ${CYAN}6.${RESET} ${INSTALL} Image update and restart"
+    echo -e "    ${CYAN}7.${RESET} ${EXIT} Exit"
     draw_bottom_border
     echo -ne "${YELLOW}Enter your choice [1-6]: ${RESET}"
 }
@@ -184,6 +194,9 @@ while true; do
             view_logs
             ;;
         6)
+            images
+            ;;
+        7)
             echo -e "${EXIT} Exiting...${RESET}"
             exit 0
             ;;
