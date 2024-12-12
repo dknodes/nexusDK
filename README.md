@@ -11,7 +11,7 @@
 Run the following command to clone the repository, set permissions, and execute the setup script:
 
 ```bash
-sudo bash -c 'git clone https://github.com/dknodes/nexusDK.git && cd nexusDK && chmod ugo+x nexusDK.sh && ./nexusDK.sh'
+sudo bash -c 'git clone https://github.com/dknodes/nexusDK.git && cd nexusDK && chmod ugo+x nexusDK.sh && ./nexusDK.sh'```
 
 
 # Full Tutorial:
