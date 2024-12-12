@@ -122,8 +122,6 @@ restart_node() {
 # View Nexus Node Logs
 # ----------------------------
 view_logs() {
-    echo -e "${LOGS} Viewing last 30 logs of Nexus Node...${RESET}"
-    docker-compose logs --tail 30
     echo -e "${LOGS} Streaming logs in real-time... Press Ctrl+C to stop.${RESET}"
     docker-compose logs -f
     read -p "Press enter to return to the main menu..."
